@@ -70,7 +70,7 @@ const Page = () => {
         <div id="quiz-form" className="quiz-container">
           {recommendedCareers.length === 0 && (
             <div className="question-container">
-              <h3>Question {currentQuestion + 1}</h3>
+              <h3>Question {currentQuestion + 1} / 11</h3>
               <h2>{questionData.Caption}</h2>
               {questionData.Answers.map((answer, index) => (
                 <div key={index} className="answer-container">
