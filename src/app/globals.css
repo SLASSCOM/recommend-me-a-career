@@ -13,6 +13,19 @@
   background-color: #ffffff;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+  height: auto;
+}
+
+/* Apply the "highlight" class to top 3 recommended careers */
+ol#careerList li:nth-child(1),
+ol#careerList li:nth-child(2),
+ol#careerList li:nth-child(3) {
+  background-color: lightgreen; /* Customize this color as needed */
+  color: rgb(0, 0, 0);
+}
+
+ol#careerList li {
+  margin-bottom: 10px;
 }
 
 h1 {
@@ -78,6 +91,7 @@ input[type="radio"]:checked + label {
   transition: background-color 0.2s;
   margin-bottom: 20px;
   text-align: center;
+  margin-top: 15px;
 }
 
 #back {

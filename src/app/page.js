@@ -62,6 +62,10 @@ const Page = () => {
 
   const questionData = quizData.Questions[currentQuestion];
 
+  // Calculate the current question number and total number of questions
+  const questionNumber = currentQuestion + 1;
+  const totalQuestions = quizData.Questions.length;
+
   return (
     <div>
       <Header />
@@ -70,7 +74,7 @@ const Page = () => {
         <div id="quiz-form" className="quiz-container">
           {recommendedCareers.length === 0 && (
             <div className="question-container">
-              <h3>Question {currentQuestion + 1} / 11</h3>
+              <h3>Question {questionNumber} of {totalQuestions}</h3>
               <h2>{questionData.Caption}</h2>
               {questionData.Answers.map((answer, index) => (
                 <div key={index} className="answer-container">
@@ -115,7 +119,9 @@ const Page = () => {
               <h2>Recommended careers for you in priority order</h2>
               <ol id="careerList">
                 {recommendedCareers.map((career, index) => (
-                  <li key={index}>{career}</li>
+                  <li key={index} className={index < 3 ? "highlighted" : ""}>
+                    {career}
+                  </li>
                 ))}
               </ol>
               <button
@@ -132,8 +138,8 @@ const Page = () => {
             </div>
           )}
         </div>
-{/* 
-        <button
+
+        {/* <button
           id="showLogBtn"
           className={`action-btn ${
             recommendedCareers.length > 0 || showLog ? "hidden" : ""
@@ -148,4 +154,3 @@ const Page = () => {
 };
 
 export default Page;
-
