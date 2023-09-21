@@ -70,9 +70,11 @@ const Page = () => {
     <div>
       <Header />
       <div className="container">
-        <h1 className="mainHeading">Which tech job is best for my personality?</h1>
+        {!recommendedCareers.length > 0 && (
+          <h1>Which tech job is best for my personality?</h1>
+        )}
         <div id="quiz-form" className="quiz-container">
-          {recommendedCareers.length === 0 && (
+          {recommendedCareers.length === 0 ? (
             <div className="question-container">
               <h3>Question {questionNumber} of {totalQuestions}</h3>
               <h2>{questionData.Caption}</h2>
@@ -112,9 +114,7 @@ const Page = () => {
                 </button>
               </div>
             </div>
-          )}
-
-          {recommendedCareers.length > 0 && (
+          ) : (
             <div className="result">
               <h2>Recommended careers for you in priority order</h2>
               <ol id="careerList">
