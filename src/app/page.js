@@ -70,7 +70,7 @@ const Page = () => {
     <div>
       <Header />
       <div className="container">
-        <h1>Which tech job is best for my personality?</h1>
+        <h1 className="mainHeading">Which tech job is best for my personality?</h1>
         <div id="quiz-form" className="quiz-container">
           {recommendedCareers.length === 0 && (
             <div className="question-container">

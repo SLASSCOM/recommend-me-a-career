@@ -5,15 +5,15 @@ export default function Header() {
     return (
         <header className="header">
             <div className="logo">
-                <a href="https://open.uom.lk/index.html">
-                    <a className="navbarBrand">
-                        <img src="https://open.uom.lk/assets/images/logo.png" alt="" />
-                    </a>
-                </a>
+                <Link href="https://open.uom.lk/">
+                    <div className="navbarBrand">
+                        <img src="https://open.uom.lk/assets/images/logo.png" alt="moraLogo" />
+                    </div>
+                </Link>
             </div>
             <div className="headerRight">
-                <a href="https://open.uom.lk/recommend.html" className="coursesLink">Courses</a>
-                <a href="https://open.uom.lk/lms/my" className="loginBtn">Login</a>
+                <Link href="https://open.uom.lk/recommend.html" className="coursesLink">Courses</Link>
+                <Link href="https://open.uom.lk/lms/my/" className="loginBtn">Login</Link>
             </div>
         </header>
     );
