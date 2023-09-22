@@ -9,17 +9,16 @@ const quizData = {
                         "Data Scientist",
                         "Full Stack Developer",
                         "Cloud Developer",
-                        "Script Programmer"
+                        "Python Programmer"
                     ]
                 },
                 {
                     "Caption": "I can manage basic math and simple formulas",
                     "Careers": [
-                        "Automation Engineer",
+                        "Software Automation Engineer",
                         "DevOps Professional",
                         "Mobile Developer",
-                        "Security Professional",
-                        "Systems Administrator"
+                        "Security Professional"                        
                     ]
                 },
                 {
@@ -27,10 +26,7 @@ const quizData = {
                     "Careers": [
                         "UX Professional",
                         "Software Tester",
-                        "Digital Marketing Professional",
                         "Web Developer",
-                        "Graphic Designer",
-                        "Business Analyst"
                     ]
                 }
             ]
@@ -43,9 +39,8 @@ const quizData = {
                     "Careers": [
                         "Data Scientist",
                         "Software Tester",
-                        "Automation Engineer",
-                        "Script Programmer",
-                        "Graphic Designer"
+                        "Software Automation Engineer",
+                        "Python Programmer",
                     ]
                 },
                 {
@@ -55,7 +50,6 @@ const quizData = {
                         "DevOps Professional",
                         "Security Professional",
                         "Cloud Developer",
-                        "Systems Administrator"
                     ]
                 },
                 {
@@ -63,9 +57,7 @@ const quizData = {
                     "Careers": [
                         "Mobile Developer",
                         "UX Professional",
-                        "Digital Marketing Professional",
-                        "Web Developer",
-                        "Business Analyst"
+                        "Web Developer"
                     ]
                 }
             ]
@@ -79,7 +71,7 @@ const quizData = {
                         "Full Stack Developer",
                         "Data Scientist",
                         "Cloud Developer",
-                        "Script Programmer"
+                        "Python Programmer"
                     ]
                 },
                 {
@@ -87,20 +79,16 @@ const quizData = {
                     "Careers": [
                         "UX Professional",
                         "Web Developer",
-                        "Mobile Developer",
-                        "Digital Marketing Professional",
-                        "Graphic Designer",
-                        "Business Analyst"
+                        "Mobile Developer"
                     ]
                 },
                 {
                     "Caption": "I follow known procedures to solve a problem",
                     "Careers": [
                         "DevOps Professional",
-                        "Automation Engineer",
+                        "Software Automation Engineer",
                         "Security Professional",
-                        "Software Tester",
-                        "Systems Administrator"
+                        "Software Tester"
                     ]
                 }
             ]
@@ -112,21 +100,18 @@ const quizData = {
                     "Caption": "I learn by doing things hands-on by myself",
                     "Careers": [
                         "Full Stack Developer",
-                        "Script Programmer",
+                        "Python Programmer",
                         "Cloud Developer",
-                        "Data Scientist",
-                        "Graphic Designer"
+                        "Data Scientist"
                     ]
                 },
                 {
                     "Caption": "I learn by reading and studying available content",
                     "Careers": [
-                        "Automation Engineer",
+                        "Software Automation Engineer",
                         "DevOps Professional",
                         "Security Professional",
-                        "Software Tester",
-                        "Systems Administrator",
-                        "Business Analyst"
+                        "Software Tester"
                     ]
                 },
                 {
@@ -135,7 +120,6 @@ const quizData = {
                         "Mobile Developer",
                         "Web Developer",
                         "UX Professional",
-                        "Digital Marketing Professional"
                     ]
                 }
             ]
@@ -148,9 +132,7 @@ const quizData = {
                     "Careers": [
                         "Mobile Developer",
                         "UX Professional",
-                        "Digital Marketing Professional",
-                        "Web Developer",
-                        "Graphic Designer"
+                        "Web Developer"
                     ]
                 },
                 {
@@ -167,10 +149,8 @@ const quizData = {
                     "Careers": [
                         "DevOps Professional",
                         "Software Tester",
-                        "Automation Engineer",
-                        "Script Programmer",
-                        "Systems Administrator",
-                        "Business Analyst"
+                        "Software Automation Engineer",
+                        "Python Programmer"
                     ]
                 }
             ]
@@ -183,24 +163,20 @@ const quizData = {
                     "Careers": [
                         "Full Stack Developer",
                         "DevOps Professional",
-                        "Digital Marketing Professional",
                         "Cloud Developer",
                         "Mobile Developer",
                         "Web Developer",
-                        "Systems Administrator"
                     ]
                 },
                 {
                     "Caption": "I like to prioritize and focus on one task at a time",
                     "Careers": [
-                        "Script Programmer",
+                        "Python Programmer",
                         "Security Professional",
                         "Data Scientist",
-                        "Automation Engineer",
+                        "Software Automation Engineer",
                         "UX Professional",
-                        "Software Tester",
-                        "Graphic Designer",
-                        "Business Analyst"
+                        "Software Tester"
                     ]
                 }
             ]
@@ -212,10 +188,8 @@ const quizData = {
                     "Caption": "I like to privide leadership the team when possible",
                     "Careers": [
                         "Full Stack Developer",
-                        "Digital Marketing Professional",
                         "Cloud Developer",
-                        "Data Scientist",
-                        "Business Analyst"
+                        "Data Scientist"
                     ]
                 },
                 {
@@ -225,17 +199,15 @@ const quizData = {
                         "DevOps Professional",
                         "UX Professional",
                         "Mobile Developer",
-                        "Software Tester",
-                        "Graphic Designer"
+                        "Software Tester"
                     ]
                 },
                 {
                     "Caption": "I like to work independently to avoid distractions",
                     "Careers": [
-                        "Script Programmer",
-                        "Automation Engineer",
-                        "Security Professional",
-                        "Systems Administrator"
+                        "Python Programmer",
+                        "Software Automation Engineer",
+                        "Security Professional"
                     ]
                 }
             ]
@@ -247,7 +219,6 @@ const quizData = {
                     "Caption": "I love taking risks and try new solutions",
                     "Careers": [
                         "Mobile Developer",
-                        "Digital Marketing Professional",
                         "Full Stack Developer",
                         "Cloud Developer",
                         "UX Professional"
@@ -257,20 +228,17 @@ const quizData = {
                     "Caption": "I carefully take calculated risks but always look at practicality",
                     "Careers": [
                         "DevOps Professional",
-                        "Script Programmer",
+                        "Python Programmer",
                         "Web Developer",
-                        "Data Scientist",
-                        "Graphic Designer"
+                        "Data Scientist"
                     ]
                 },
                 {
                     "Caption": "I stick to proven approaches and do not like to take risks",
                     "Careers": [
                         "Software Tester",
-                        "Automation Engineer",
-                        "Security Professional",
-                        "Systems Administrator",
-                        "Business Analyst"
+                        "Software Automation Engineer",
+                        "Security Professional"
                     ]
                 }
             ]
@@ -281,12 +249,11 @@ const quizData = {
                 {
                     "Caption": "I'm a perfectionist and like to correct even minor details",
                     "Careers": [
-                        "Script Programmer",
+                        "Python Programmer",
                         "Software Tester",
                         "Security Professional",
                         "DevOps Professional",
-                        "Automation Engineer",
-                        "Systems Administrator"
+                        "Software Automation Engineer"
                     ]
                 },
                 {
@@ -302,10 +269,7 @@ const quizData = {
                     "Caption": "I like to work on tasks where I can colaborate and understand others",
                     "Careers": [
                         "Web Developer",
-                        "Digital Marketing Professional",
-                        "UX Professional",
-                        "Graphic Designer",
-                        "Business Analyst"
+                        "UX Professional" 
                     ]
                 }
             ]
@@ -320,22 +284,18 @@ const quizData = {
                         "UX Professional",
                         "Full Stack Developer",
                         "Cloud Developer",
-                        "Web Developer",
-                        "Digital Marketing Professional",
-                        "Business Analyst"
+                        "Web Developer"
                     ]
                 },
                 {
                     "Caption": "I like to avoid them at all costs and correct immediately if occured",
                     "Careers": [
                         "Security Professional",
-                        "Automation Engineer",
+                        "Software Automation Engineer",
                         "Software Tester",
                         "DevOps Professional",
                         "Data Scientist",
-                        "Script Programmer",
-                        "Graphic Designer",
-                        "Systems Administrator"
+                        "Python Programmer"
                     ]
                 }
             ]
@@ -347,9 +307,7 @@ const quizData = {
                     "Caption": "I love learning about different industries and know a lot about them",
                     "Careers": [
                         "Data Scientist",
-                        "UX Professional",
-                        "Digital Marketing Professional",
-                        "Business Analyst"
+                        "UX Professional"
                     ]
                 },
                 {
@@ -357,7 +315,6 @@ const quizData = {
                     "Careers": [
                         "Full Stack Developer",
                         "Web Developer",
-                        "Graphic Designer",
                         "Mobile Developer",
                         "Software Tester",
                         "Cloud Developer"
@@ -367,10 +324,9 @@ const quizData = {
                     "Caption": "I have limited knowledge on businesses and not much of an interest",
                     "Careers": [
                         "Security Professional",
-                        "Systems Administrator",
-                        "Automation Engineer",
+                        "Software Automation Engineer",
                         "DevOps Professional",
-                        "Script Programmer",
+                        "Python Programmer",
                     ]
                 }
             ]

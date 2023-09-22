@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Header from "./components/Header";
 import quizData from "./questions";
 import careersData from "./careers.json"; // Import the careers list
+import links from "./links"; // Import the career links
 import "./globals.css";
 import Script from "next/script";
 
@@ -66,6 +67,12 @@ const Page = () => {
   const questionNumber = currentQuestion + 1;
   const totalQuestions = quizData.Questions.length;
 
+  // Determine whether to show the "Back" button
+  const showBackButton = currentQuestion > 0;
+
+  // Determine whether to enable the "Next" button
+  const isNextButtonDisabled = userAnswers[currentQuestion] === null;
+
   return (
     <div>
       <Header />
@@ -94,19 +101,22 @@ const Page = () => {
                 </div>
               ))}
               <div className="button-container">
-                <button
-                  id="back"
-                  className={`action-btn ${
-                    currentQuestion === 0 ? "disabled" : ""
-                  }`}
-                  onClick={handleBackButtonClick}
-                >
-                  Back
-                </button>
+                {showBackButton && (
+                  <button
+                    id="back"
+                    className={`action-btn ${
+                      currentQuestion === 0 ? "disabled" : ""
+                    }`}
+                    onClick={handleBackButtonClick}
+                  >
+                    Back
+                  </button>
+                )}
                 <button
                   id="next"
                   className="action-btn"
                   onClick={handleNextButtonClick}
+                  disabled={isNextButtonDisabled}
                 >
                   {currentQuestion === quizData.Questions.length - 1
                     ? "Calculate Results"
@@ -120,7 +130,9 @@ const Page = () => {
               <ol id="careerList">
                 {recommendedCareers.map((career, index) => (
                   <li key={index} className={index < 3 ? "highlighted" : ""}>
-                    {career}
+                    <a href={links[career]} target="_blank" rel="noopener noreferrer">
+                      {career}
+                    </a>
                   </li>
                 ))}
               </ol>
@@ -144,7 +156,7 @@ const Page = () => {
           className={`action-btn ${
             recommendedCareers.length > 0 || showLog ? "hidden" : ""
           }`}
-          onClick={handleShowLogClick}
+          onClick={() => setShowLog(true)}
         >
           Show Answer Log
         </button> */}
