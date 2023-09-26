@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import quizData from "./questions";
 import careersData from "./careers.json"; // Import the careers list
@@ -7,32 +7,78 @@ import links from "./links"; // Import the career links
 import "./globals.css";
 import Script from "next/script";
 
-const Page = () => {
+const Page = () => {  
+  // Function to generate a unique sessionId
+  const generateSessionId = () => {
+    return Date.now().toString(36) + Math.random().toString(36).substring(2);
+  };
+  const [session, setSession] = useState(generateSessionId());
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [userAnswers, setUserAnswers] = useState(Array(quizData.Questions.length).fill(null));
   const [recommendedCareers, setRecommendedCareers] = useState([]);
   const [showLog, setShowLog] = useState(false);
   const resultCount = 10;
 
-  const handleNextButtonClick = () => {
+
+
+  // Function to call the first API
+  const callInsertAnswerAPI = async (question, answer) => {
+    const url = `https://script.google.com/macros/s/AKfycbwCaeWzrO5bdVJ29WKAekKHJJcmqAWiRzZT0FCtkHlS0xkhaDQiSnoH7NYStlwVSBzvVw/exec?action=insertAnswer&sessionId=${session}&question=${question}&answer=${answer}`;
+    
+    try {
+      const response = await fetch(url);
+      if (response.ok) {
+        // API call was successful, handle the response if needed
+      } else {
+        // Handle errors if the API call fails
+      }
+    } catch (error) {
+      // Handle network errors
+    }
+  };
+
+  // Function to call the second API
+  const callInsertRecommendationsAPI = async (recommendations) => {
+    const url = `https://script.google.com/macros/s/AKfycbwCaeWzrO5bdVJ29WKAekKHJJcmqAWiRzZT0FCtkHlS0xkhaDQiSnoH7NYStlwVSBzvVw/exec?action=insertRecommendations&sessionId=${session}&recommendation=${recommendations.join('&recommendation=')}`;
+    
+    try {
+      const response = await fetch(url);
+      if (response.ok) {
+        // API call was successful, handle the response if needed
+      } else {
+        // Handle errors if the API call fails
+      }
+    } catch (error) {
+      // Handle network errors
+    }
+  };
+
+  useEffect(() => {
+    // Set the initial session ID when the component mounts
+    setSession(generateSessionId());
+  }, []);
+
+  const handleNextButtonClick = async () => {
     if (currentQuestion < quizData.Questions.length - 1) {
       if (userAnswers[currentQuestion] !== null) {
+        const question = quizData.Questions[currentQuestion].Caption;
+        const answer = quizData.Questions[currentQuestion].Answers[userAnswers[currentQuestion]].Caption;
+        callInsertAnswerAPI(question, answer); // Pass the session ID
         setCurrentQuestion(currentQuestion + 1);
       } else {
         // Handle the case where the user hasn't selected an answer
       }
     } else if (currentQuestion === quizData.Questions.length - 1) {
-      // If on the 11th question, calculate results
-      calculateResults();
+      calculateResults(); // No need to pass the session ID
     }
   };
-
+  
   const handleBackButtonClick = () => {
     if (currentQuestion > 0) {
       setCurrentQuestion(currentQuestion - 1);
     }
   };
-
+  
   const calculateResults = () => {
     const careerCount = {};
 
@@ -52,6 +98,10 @@ const Page = () => {
     const recommendedCareers = sortedCareers.slice(0, resultCount);
 
     setRecommendedCareers(recommendedCareers);
+    
+    // Call the second API with the recommended careers
+    callInsertRecommendationsAPI(recommendedCareers);
+
     setShowLog(false); // Hide the log
   };
 
@@ -62,15 +112,9 @@ const Page = () => {
   };
 
   const questionData = quizData.Questions[currentQuestion];
-
-  // Calculate the current question number and total number of questions
   const questionNumber = currentQuestion + 1;
   const totalQuestions = quizData.Questions.length;
-
-  // Determine whether to show the "Back" button
   const showBackButton = currentQuestion > 0;
-
-  // Determine whether to enable the "Next" button
   const isNextButtonDisabled = userAnswers[currentQuestion] === null;
 
   return (
@@ -150,16 +194,6 @@ const Page = () => {
             </div>
           )}
         </div>
-
-        {/* <button
-          id="showLogBtn"
-          className={`action-btn ${
-            recommendedCareers.length > 0 || showLog ? "hidden" : ""
-          }`}
-          onClick={() => setShowLog(true)}
-        >
-          Show Answer Log
-        </button> */}
       </div>
     </div>
   );
