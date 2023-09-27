@@ -10,7 +10,7 @@ import Script from "next/script";
 const Page = () => {  
   // Function to generate a unique sessionId
   const generateSessionId = () => {
-    return Date.now().toString(36) + Math.random().toString(36).substring(2);
+    return "OUOMLK" + Math.random().toString(36).substring(2) + "OpenUomLk" + Date.now().toString(36) + "2023" + Date.now().toString(18) +  + Math.random().toString(36).substring(3) + "SID";
   };
   const [session, setSession] = useState(generateSessionId());
   const [currentQuestion, setCurrentQuestion] = useState(0);
