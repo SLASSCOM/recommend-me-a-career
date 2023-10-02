@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add these styles to your CSS file, e.g., global.css */
+
+/* Styles for the container */
+ .container {
+  max-width: 900px;
+  width: 120%;
+  margin: 40px auto;
+  margin-top: 120px;
+  padding-left: 45px;
+  padding-right: 45px;
+  padding-top: 45px;
+  padding-bottom: 111px;
+  background-color: #ffffff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  height: auto;
+  min-height: 450px;
+} 
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    margin: 20px auto;
+    margin-bottom: 20px;
+    padding: 20px;
+    padding-top: 100px;
+    height: auto;
+    width: 100%;
+    max-width: 768px;
+  }
+}
+@media (max-width: 500) {
+  .container{
+  max-width: 450px;
+}
+}
+
+/* Apply the "highlight" class to top 3 recommended careers */
+ol#careerList li:nth-child(1),
+ol#careerList li:nth-child(2),
+ol#careerList li:nth-child(3) {
+  background-color: lightgreen; /* Customize this color as needed */
+  color: rgb(0, 0, 0);
+}
+
+ol#careerList li {
+  margin-bottom: 10px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 60px;
+  color: #323131;
+}
+
+/* Styles for first H1 */
+.mainHeading{
+  font-weight: bold;
+  font-size: large;
+  /* box-shadow: 0 0 2px #323131;
+  border:solid #323131 1px; */
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+/* Styles for questions and answers */
+.question-container {
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #606060;
+}
+
+h3 {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #606060;
+}
+
+.answer-container {
+  margin-bottom: 10px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  display: block;
+  background-color: #f1f1f1;
+  border: 1px solid #d6d6d6;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+input[type="radio"]:checked + label {
+  background-color: #5ea6b1;
+  border-color: #5ea6b1;
+  color: #ffffff;
+}
+
+/* Styles for action buttons */
+.action-btn {
+  display: inline-block;
+  width: 200px;
+  padding: 15px;
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-bottom: 40px;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 0px;
+  height: 60px;
+}
+
+#back {
+  float: left;
+  background-color: transparent;
+  border: 2px solid #4caf50;
+  color: #4caf50;
+}
+
+#next {
+  float: right;
+}
+
+.action-btn:disabled {
+  background-color: #a5d6a7;
+  color: white;
+  cursor: not-allowed;
+}
+
+/* Styles for the result */
+.result {
+  text-align: left;
+  padding: 20px;
+  background-color: #ffffff;
+  /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); */
+  /* border-radius: 10px; */
+}
+
+.result h2 {
+  margin-bottom: 30px;
+}
+
+ol#careerList li {
+  margin-bottom: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Styles for the answer log */
+.log {
+  text-align: left;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.log h2 {
+  margin-bottom: 20px;
+}
+
+ol#log li {
+  margin-bottom: 10px;
+}
+
+/* Style for the "Show Answer Log" button */
+#showLogBtn {
+  margin-top: 20px;
+}
+
+   body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+   }
+/*  margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+} */
