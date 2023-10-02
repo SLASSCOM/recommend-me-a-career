@@ -6,7 +6,7 @@ import careersData from "./careers.json"; // Import the careers list
 import links from "./links"; // Import the career links
 import "./globals.css";
 import Script from "next/script";
-import Quiz from "./components/quiz";
+import Quiz from "./components/quizcomponent";
 
 const Page = () => {  
   return (
