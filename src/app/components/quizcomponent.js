@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from "react";
 import quizData from "./questions";
 import careersData from "./careers.json";
@@ -112,6 +113,7 @@ export default function Quiz() {
   const showBackButton = currentQuestion > 0;
   const isNextButtonDisabled = userAnswers[currentQuestion] === null;
 
+  
   return (
     <div>
       <div className="container">
