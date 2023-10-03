@@ -153,7 +153,7 @@ body {
   .container {
     margin: 20px auto;
     margin-bottom: 110px;
-    padding: 110px; /* Simplify padding declaration */
+    padding: 20px; /* Simplify padding declaration */
     padding-top: 100px;
     height: auto;
     max-width: 768px;
@@ -170,7 +170,7 @@ body {
 /* Responsive adjustments for question and quiz containers */
 @media (max-width: 768px) {
   .question-container {
-    margin-bottom: 20px;
+    margin-bottom: 110px;
   }
 
   h2 {
