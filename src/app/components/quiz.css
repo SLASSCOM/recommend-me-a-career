@@ -170,7 +170,7 @@ body {
 /* Responsive adjustments for question and quiz containers */
 @media (max-width: 768px) {
   .question-container {
-    margin-bottom: 110px;
+    margin-bottom: 20px;
   }
 
   h2 {

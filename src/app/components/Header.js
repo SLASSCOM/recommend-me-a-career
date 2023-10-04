@@ -1,38 +1,57 @@
 "use client";
+/* JavaScript in Header.js */
 import Link from "next/link";
-import "./header.css";
-import { useEffect } from "react";
-
-
+import { useEffect, useState } from "react";
+import './header.css';
 
 export default function Header() {
-    // JavaScript to handle the menu toggle
-    useEffect(() => {
-        // This code will run in the client-side context
-        const menuToggle = document.getElementById("menu-toggle");
-        const menu = document.querySelector(".menu");
-    
-        if (menuToggle && menu) {
-          menuToggle.addEventListener("click", function () {
-            menu.classList.toggle("active");
-          });
-        }
-      }, []); // Empty dependency array ensures it runs only once, similar to DOMContentLoaded
-    
+  useEffect(() => {
+    const menuToggle = document.getElementById("menu-toggle");
+    const menu = document.querySelector(".menu");
 
-    return (
-        <header className="header">
-            <div className="logo">
-                <Link href="https://open.uom.lk/">
-                    <div className="navbarBrand">
-                        <img src="https://open.uom.lk/assets/images/logo.png" alt="moraLogo" />
-                    </div>
-                </Link>
-            </div>
-            <div className="headerRight">
-                <Link href="https://open.uom.lk/recommend.html" className="coursesLink">Courses</Link>
-                <Link href="https://open.uom.lk/lms/my/" className="loginBtn">Login</Link>
-            </div>
-        </header>
-    );
+    if (menuToggle && menu) {
+      menuToggle.addEventListener("change", function () {
+        menu.classList.toggle("active");
+      });
+    }
+  }, []);
+
+  return (
+    <header className="header">
+      <div className="logo">
+        <Link href="https://open.uom.lk/">
+          <div className="navbarBrand">
+            <img
+              src="https://open.uom.lk/assets/images/logo.png"
+              alt="moraLogo"
+            />
+          </div>
+        </Link>
+      </div>
+      
+      {/* Show header-right only on larger screens */}
+      <div className="header-right">
+        <Link href="https://open.uom.lk/recommend.html" target="_blank" className="courses-link">
+          Courses
+        </Link>
+        <Link href="https://open.uom.lk/lms/my/" className="login-btn">
+          Login
+        </Link>
+      </div>
+      
+      {/* Mobile Hamburger Menu */}
+      <input type="checkbox" id="menu-toggle" className="menu-toggle" />
+      <label htmlFor="menu-toggle" className="menu-label">
+        Menu
+      </label>
+      <div className="menu">
+        <Link href="https://open.uom.lk/recommend.html" className="courses-link">
+          Courses
+        </Link>
+        <Link href="https://open.uom.lk/lms/my/" className="login-btn">
+          Login
+        </Link>
+      </div>
+    </header>
+  );
 }
