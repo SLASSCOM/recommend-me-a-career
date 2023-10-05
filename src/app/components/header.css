@@ -79,6 +79,7 @@ header {
   z-index: 1000;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   text-align: center; /* Center-align menu items */
+  margin-top: 25px;
 }
 
 .menu a {
@@ -86,6 +87,7 @@ header {
   display: block; /* Display each link as a block element */
   padding: 10px; /* Add some padding for spacing */
 }
+
 
 /* Set menu width to 100% on smaller screens */
 @media (max-width: 768px) {
@@ -95,6 +97,10 @@ header {
 
   .menu {
     width: 100%;
+  }
+  
+  .login-btn {
+    
   }
 
   /* Hide the header-right content on mobile screens */
@@ -120,3 +126,26 @@ input[type="checkbox"] {
   display: none;
 }
 
+/* Style the mobile menu login button */
+.login-btn-mobile {
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem; /* Decreased font size for a smaller button */
+  border-radius: 0.2rem;
+  color: #fff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-left: 8px;
+  display: inline-block; /* Make it an inline-block element to control width */
+  width: 25%; /* Allow the button to adjust its width based on content */
+  align-items: center;
+  align-content: center;
+  margin-left: 37.5%;
+  margin-right: 37.5%;
+}

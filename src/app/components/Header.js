@@ -41,15 +41,17 @@ export default function Header() {
       
       {/* Mobile Hamburger Menu */}
       <input type="checkbox" id="menu-toggle" className="menu-toggle" />
-      <label for="menu-toggle" class="menu-label">&#9776; Menu 
+      <label for="menu-toggle" class="menu-label">&#9776;
       </label>
       <div className="menu">
         <Link href="https://open.uom.lk/recommend.html" className="courses-link">
           Courses
         </Link>
+        <button className="login-btn-mobile" type="button">
         <Link href="https://open.uom.lk/lms/my/" className="login-btn">
           Login
         </Link>
+        </button>
       </div>
     </header>
   );
