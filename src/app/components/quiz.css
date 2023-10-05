@@ -20,6 +20,10 @@
   min-height: 450px;
 }
 
+.quizContainer {
+  display: flex;
+}
+
 /* Apply the "highlight" class to top 3 recommended careers */
 ol#careerList li:nth-child(1),
 ol#careerList li:nth-child(2),
@@ -164,6 +168,7 @@ body {
   .container {
     max-width: 450px; /* Adjusted max-width for smaller screens */
     padding-bottom: 110px;
+    padding-top: 130px;
   }
 }
 

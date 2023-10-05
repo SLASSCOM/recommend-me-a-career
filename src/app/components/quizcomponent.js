@@ -115,7 +115,7 @@ export default function Quiz() {
 
   
   return (
-    <div>
+    <div className="quizContainer">
       <div className="container">
         {!recommendedCareers.length > 0 && (
           <h1 className="mainHeading">Which tech job is best for my personality?</h1>
