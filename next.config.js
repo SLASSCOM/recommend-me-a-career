@@ -10,5 +10,7 @@ const nextConfig = {
    
     // Optional: Change the output directory `out` -> `dist`
     distDir: 'build',
+    // Add basePath
+    basePath: '/recommend-me-a-career',
   }
 module.exports = nextConfig
