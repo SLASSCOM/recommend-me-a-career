@@ -32,7 +32,7 @@ export default function Header() {
       {/* Show header-right only on larger screens */}
       <div className="header-right">
         <Link href="https://slasscom.lk" target="_blank" className="courses-link">
-          SLASSCOM
+          by SLASSCOM
         </Link>
       </div>
       
@@ -42,7 +42,7 @@ export default function Header() {
       </label>
       <div className="menu">
       <Link href="https://slasscom.lk" target="_blank" className="courses-link">
-          SLASSCOM
+          by SLASSCOM
         </Link>
       </div>
     </header>

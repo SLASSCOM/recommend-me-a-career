@@ -2,19 +2,21 @@
 import React, { useState, useEffect } from "react";
 import quizData from "./questions";
 import "./quiz.css";
-import { v4 as uuid } from 'uuid';
+import { v4 as uuid } from "uuid";
 
 export default function Quiz() {
   const [session, setSession] = useState(generateSessionId());
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [userAnswers, setUserAnswers] = useState(Array(quizData.Questions.length).fill(null));
+  const [userAnswers, setUserAnswers] = useState(
+    Array(quizData.Questions.length).fill(null)
+  );
   const [recommendedCareers, setRecommendedCareers] = useState([]);
   const [showLog, setShowLog] = useState(false);
   const resultCount = 10;
 
   // Function to generate a unique sessionId
   function generateSessionId() {
-    return uuid() ;
+    return uuid();
   }
 
   useEffect(() => {
@@ -28,44 +30,68 @@ export default function Quiz() {
 
     try {
       const response = await fetch(url);
-      if (response.ok) {
-        // API call was successful, handle the response if needed
-      } else {
-        // Handle errors if the API call fails
+      if (!response.ok) {
+        console.error(
+          "error: ",
+          response.status,
+          response.statusText,
+          response.url,
+          " -"
+        );
       }
     } catch (error) {
-      // Handle network errors
+      console.error(error);
     }
   }
 
   // Function to call the second API
   async function callInsertRecommendationsAPI(recommendations) {
-    const url = `https://script.google.com/macros/s/AKfycbyQ8ARQKdHGnvMj8DW4R1UKTVlRpgFOSGpfkLot7AcB-uyn9DEuYmfrvzh6hAf7Xor3hA/exec?action=insertRecommendations&sessionId=${session}&recommendation=${recommendations.join('&recommendation=')}`;
+    const url = `https://script.google.com/macros/s/AKfycbyQ8ARQKdHGnvMj8DW4R1UKTVlRpgFOSGpfkLot7AcB-uyn9DEuYmfrvzh6hAf7Xor3hA/exec?action=insertRecommendations&sessionId=${session}&recommendation=${recommendations.join(
+      "&recommendation="
+    )}`;
 
     try {
       const response = await fetch(url);
-      if (response.ok) {
-        // API call was successful, handle the response if needed
-      } else {
-        // Handle errors if the API call fails
+      if (!response.ok) {
+        console.error(
+          "error: ",
+          response.status,
+          response.statusText,
+          response.url,
+          " -"
+        );
       }
     } catch (error) {
-      // Handle network errors
+      console.error(error);
     }
   }
 
+  // function handleNextButtonClick() {
+  //   if (currentQuestion < quizData.Questions.length -1) {
+  //     if (userAnswers[currentQuestion] !== null) {
+  //       const question = quizData.Questions[currentQuestion].Caption;
+  //       const answer = quizData.Questions[currentQuestion].Answers[userAnswers[currentQuestion]].Caption;
+  //       callInsertAnswerAPI(question, answer);
+  //       setCurrentQuestion(currentQuestion + 1);
+  //     } else {
+  //       // Handle the case where the user hasn't selected an answer
+  //     }
+  //   } else if (currentQuestion === quizData.Questions.length - 1) {
+  //     calculateResults();
+  //   }
+  // }
+
   function handleNextButtonClick() {
-    if (currentQuestion < quizData.Questions.length - 1) {
-      if (userAnswers[currentQuestion] !== null) {
-        const question = quizData.Questions[currentQuestion].Caption;
-        const answer = quizData.Questions[currentQuestion].Answers[userAnswers[currentQuestion]].Caption;
-        callInsertAnswerAPI(question, answer);
-        setCurrentQuestion(currentQuestion + 1);
-      } else {
-        // Handle the case where the user hasn't selected an answer
-      }
-    } else if (currentQuestion === quizData.Questions.length - 1) {
+    const question = quizData.Questions[currentQuestion].Caption;
+    const answer =
+      quizData.Questions[currentQuestion].Answers[userAnswers[currentQuestion]]
+        .Caption;
+    callInsertAnswerAPI(question, answer);
+
+    if (currentQuestion === quizData.Questions.length - 1) {
       calculateResults();
+    } else {
+      setCurrentQuestion(currentQuestion + 1);
     }
   }
 
@@ -112,17 +138,20 @@ export default function Quiz() {
   const showBackButton = currentQuestion > 0;
   const isNextButtonDisabled = userAnswers[currentQuestion] === null;
 
-  
   return (
     <div className="quizContainer">
       <div className="container">
         {!recommendedCareers.length > 0 && (
-          <h1 className="mainHeading">Which tech job is best for my personality?</h1>
+          <h1 className="mainHeading">
+            Which tech job is best for my personality?
+          </h1>
         )}
         <div id="quiz-form" className="quiz-container">
           {recommendedCareers.length === 0 ? (
             <div className="question-container">
-              <h3>Question {questionNumber} of {totalQuestions}</h3>
+              <h3>
+                Question {questionNumber} of {totalQuestions}
+              </h3>
               <h2>{questionData.Caption}</h2>
               {questionData.Answers.map((answer, index) => (
                 <div key={index} className="answer-container">
@@ -169,7 +198,7 @@ export default function Quiz() {
               <ol id="careerList">
                 {recommendedCareers.map((career, index) => (
                   <li key={index} className={index < 3 ? "highlighted" : ""}>
-                      {career}
+                    {career}
                   </li>
                 ))}
               </ol>
