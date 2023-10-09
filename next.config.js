@@ -9,7 +9,7 @@ const nextConfig = {
     // skipTrailingSlashRedirect: true,
    
     // Optional: Change the output directory `out` -> `dist`
-    distDir: 'build',
+    distDir: 'out',
     // Add basePath
     basePath: '/recommend-me-a-career',
   }
