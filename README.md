@@ -20,21 +20,12 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Deploy on GitHub Pages
 
-## Learn More
+This repository is configured to deploy on GitHub Pages. To deploy, simply commit to the `main` branch and push to GitHub. GitHub Actions will automatically build and deploy the site to GitHub Pages.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Backend
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The backend is a simple Google AppScript that is deployed as a web app. The code is located in the `backend` folder. To deploy, simply copy the code into a new Google AppScript project and deploy as a web app. The web app should be deployed as `Anyone, even anonymous` and `Access: Anyone`. The web app URL should be copied into the `quixcomponent.js` file. This AppScript saves the data to a Google Sheet. The Google Sheet is saved under the Google Drive of `bridge@slasscom.lk` user.
