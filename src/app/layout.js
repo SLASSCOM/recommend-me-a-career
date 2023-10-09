@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Recommend Me a Career',
-  description: 'open.uom.lk',
+  description: 'SLASSCOM Career Quiz',
   
 }
 

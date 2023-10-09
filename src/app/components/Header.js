@@ -19,10 +19,10 @@ export default function Header() {
   return (
     <header className="header">
       <div className="logo">
-        <Link href="https://open.uom.lk/">
+        <Link href="/">
           <div className="navbarBrand">
             <img
-              src="https://open.uom.lk/assets/images/logo.png"
+              src="/logo.png"
               alt="moraLogo"
             />
           </div>
@@ -31,11 +31,8 @@ export default function Header() {
       
       {/* Show header-right only on larger screens */}
       <div className="header-right">
-        <Link href="https://open.uom.lk/recommend.html" target="_blank" className="courses-link">
-          Courses
-        </Link>
-        <Link href="https://open.uom.lk/lms/my/" className="login-btn">
-          Login
+        <Link href="https://slasscom.lk" target="_blank" className="courses-link">
+          SLASSCOM
         </Link>
       </div>
       
@@ -44,13 +41,9 @@ export default function Header() {
       <label htmlFor="menu-toggle" className="menu-label">&#9776;
       </label>
       <div className="menu">
-        <Link href="https://open.uom.lk/recommend.html" className="courses-link">
-          Courses
+      <Link href="https://slasscom.lk" target="_blank" className="courses-link">
+          SLASSCOM
         </Link>
-        <Link href="https://open.uom.lk/lms/my/" className="courses-link">
-          Login
-        </Link>
-
       </div>
     </header>
   );

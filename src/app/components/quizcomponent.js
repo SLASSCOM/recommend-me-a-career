@@ -1,9 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import quizData from "./questions";
-import careersData from "./careers.json";
-import links from "./links";
 import "./quiz.css";
+import { v4 as uuid } from 'uuid';
 
 export default function Quiz() {
   const [session, setSession] = useState(generateSessionId());
@@ -15,7 +14,7 @@ export default function Quiz() {
 
   // Function to generate a unique sessionId
   function generateSessionId() {
-    return "OUOMLK" + Math.random().toString(36).substring(2) + "OpenUomLk" + Date.now().toString(36) + "2023" + Date.now().toString(18) +  + Math.random().toString(36).substring(3) + "SID" ;
+    return uuid() ;
   }
 
   useEffect(() => {
@@ -25,7 +24,7 @@ export default function Quiz() {
 
   // Function to call the first API
   async function callInsertAnswerAPI(question, answer) {
-    const url = `https://script.google.com/macros/s/AKfycbwCaeWzrO5bdVJ29WKAekKHJJcmqAWiRzZT0FCtkHlS0xkhaDQiSnoH7NYStlwVSBzvVw/exec?action=insertAnswer&sessionId=${session}&question=${question}&answer=${answer}`;
+    const url = `https://script.google.com/macros/s/AKfycbyQ8ARQKdHGnvMj8DW4R1UKTVlRpgFOSGpfkLot7AcB-uyn9DEuYmfrvzh6hAf7Xor3hA/exec?action=insertAnswer&sessionId=${session}&question=${question}&answer=${answer}`;
 
     try {
       const response = await fetch(url);
@@ -41,7 +40,7 @@ export default function Quiz() {
 
   // Function to call the second API
   async function callInsertRecommendationsAPI(recommendations) {
-    const url = `https://script.google.com/macros/s/AKfycbwCaeWzrO5bdVJ29WKAekKHJJcmqAWiRzZT0FCtkHlS0xkhaDQiSnoH7NYStlwVSBzvVw/exec?action=insertRecommendations&sessionId=${session}&recommendation=${recommendations.join('&recommendation=')}`;
+    const url = `https://script.google.com/macros/s/AKfycbyQ8ARQKdHGnvMj8DW4R1UKTVlRpgFOSGpfkLot7AcB-uyn9DEuYmfrvzh6hAf7Xor3hA/exec?action=insertRecommendations&sessionId=${session}&recommendation=${recommendations.join('&recommendation=')}`;
 
     try {
       const response = await fetch(url);
@@ -170,9 +169,7 @@ export default function Quiz() {
               <ol id="careerList">
                 {recommendedCareers.map((career, index) => (
                   <li key={index} className={index < 3 ? "highlighted" : ""}>
-                    <a href={links[career]} target="_blank" rel="noopener noreferrer">
                       {career}
-                    </a>
                   </li>
                 ))}
               </ol>
