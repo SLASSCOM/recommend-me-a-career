@@ -22,7 +22,7 @@ export default function Header() {
         <Link href="/">
           <div className="navbarBrand">
             <img
-              src="/logo.png"
+              src="./logo.png"
               alt="moraLogo"
             />
           </div>
