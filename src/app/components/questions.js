@@ -185,7 +185,7 @@ const quizData = {
             "Caption": "How do you work in teams?",
             "Answers": [
                 {
-                    "Caption": "I like to privide leadership the team when possible",
+                    "Caption": "I like to provide leadership the team when possible",
                     "Careers": [
                         "Full Stack Developer",
                         "Cloud Developer",
