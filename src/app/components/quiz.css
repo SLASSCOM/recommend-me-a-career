@@ -115,9 +115,17 @@ h3 {
   margin-bottom: 30px;
 }
 
+h4 {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #ea0606;
+}
+
 ol#careerList li {
   margin-bottom: 10px;
+  margin-top: 20px;
 }
+
 
 .hidden {
   display: none;
@@ -144,6 +152,10 @@ ol#log li {
 /* Style for the "Show Answer Log" button */
 #showLogBtn {
   margin-top: 20px;
+}
+
+#tryAgain {
+  margin-bottom: 20px;
 }
 
 /* Custom styles */

@@ -195,6 +195,7 @@ export default function Quiz() {
           ) : (
             <div className="result">
               <h2>Recommended careers for you in priority order</h2>
+
               <ol id="careerList">
                 {recommendedCareers.map((career, index) => (
                   <li key={index} className={index < 3 ? "highlighted" : ""}>
@@ -213,6 +214,8 @@ export default function Quiz() {
               >
                 Try Again
               </button>
+              <h4>Note: Use of this career recommendation engine is at your own discretion; 
+                we are not liable for any decisions or outcomes resulting from its suggestions.</h4>
             </div>
           )}
         </div>
