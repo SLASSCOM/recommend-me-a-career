@@ -3,6 +3,9 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import './header.css';
+import { basePath } from '../../../next.config';
+import Image from 'next/image';
+
 
 export default function Header() {
   useEffect(() => {
@@ -21,9 +24,11 @@ export default function Header() {
       <div className="logo">
         <Link href="/">
           <div className="navbarBrand">
-            <img
-              src="./logo.png"
-              alt="moraLogo"
+          <Image
+              src={`${basePath}/logo.png`}
+              alt="SLASSCOM Logo"
+              width={200}
+              height={50}
             />
           </div>
         </Link>

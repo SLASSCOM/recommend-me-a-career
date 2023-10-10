@@ -12,7 +12,7 @@ export default function Quiz() {
   );
   const [recommendedCareers, setRecommendedCareers] = useState([]);
   const [showLog, setShowLog] = useState(false);
-  const resultCount = 10;
+  const resultCount = 5;
 
   // Function to generate a unique sessionId
   function generateSessionId() {
@@ -65,21 +65,6 @@ export default function Quiz() {
       console.error(error);
     }
   }
-
-  // function handleNextButtonClick() {
-  //   if (currentQuestion < quizData.Questions.length -1) {
-  //     if (userAnswers[currentQuestion] !== null) {
-  //       const question = quizData.Questions[currentQuestion].Caption;
-  //       const answer = quizData.Questions[currentQuestion].Answers[userAnswers[currentQuestion]].Caption;
-  //       callInsertAnswerAPI(question, answer);
-  //       setCurrentQuestion(currentQuestion + 1);
-  //     } else {
-  //       // Handle the case where the user hasn't selected an answer
-  //     }
-  //   } else if (currentQuestion === quizData.Questions.length - 1) {
-  //     calculateResults();
-  //   }
-  // }
 
   function handleNextButtonClick() {
     const question = quizData.Questions[currentQuestion].Caption;
@@ -142,9 +127,14 @@ export default function Quiz() {
     <div className="quizContainer">
       <div className="container">
         {!recommendedCareers.length > 0 && (
-          <h1 className="mainHeading">
-            Which tech job is best for my personality?
-          </h1>
+          <div>
+            <h1 className="mainHeading">
+              Which tech job is best for my personality?
+            </h1>
+            <h3>
+              Answer a short series of questions to unveil a career path in tech that resonates with your strengths and preferences.
+            </h3>
+          </div>
         )}
         <div id="quiz-form" className="quiz-container">
           {recommendedCareers.length === 0 ? (
@@ -194,7 +184,7 @@ export default function Quiz() {
             </div>
           ) : (
             <div className="result">
-              <h2>Recommended careers for you in priority order</h2>
+              <h2>Recommended careers for you:</h2>
 
               <ol id="careerList">
                 {recommendedCareers.map((career, index) => (
@@ -214,8 +204,11 @@ export default function Quiz() {
               >
                 Try Again
               </button>
-              <h4>Note: Use of this career recommendation engine is at your own discretion; 
-                we are not liable for any decisions or outcomes resulting from its suggestions.</h4>
+              <h4>
+                Note: Use of this career recommendation engine is at your own
+                discretion; we are not liable for any decisions or outcomes
+                resulting from its suggestions. View the ruleset <u><a target="_blank" href="https://github.com/SLASSCOM/recommend-me-a-career/blob/master/src/app/components/questions.js">here</a></u>.
+              </h4>
             </div>
           )}
         </div>

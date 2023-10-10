@@ -12,5 +12,7 @@ const nextConfig = {
     distDir: 'out',
     // Add basePath
     basePath: '/recommend-me-a-career',
+    images: { unoptimized: true },
+    
   }
 module.exports = nextConfig
