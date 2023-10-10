@@ -27,7 +27,7 @@ export default function Header() {
           <Image
               src={`${basePath}/logo.png`}
               alt="SLASSCOM Logo"
-              width={200}
+              width={180}
               height={50}
             />
           </div>
