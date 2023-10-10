@@ -177,7 +177,7 @@ export default function Quiz() {
                   disabled={isNextButtonDisabled}
                 >
                   {currentQuestion === quizData.Questions.length - 1
-                    ? "Calculate Results"
+                    ? "Results"
                     : "Next"}
                 </button>
               </div>
