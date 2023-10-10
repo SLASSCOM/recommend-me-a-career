@@ -132,7 +132,7 @@ export default function Quiz() {
               Which tech job is best for my personality?
             </h1>
             <h3>
-              Answer a short series of questions to unveil a career path in tech that resonates with your strengths and preferences.
+              Answer a short series of questions to unveil a career path in tech that resonates with your strengths and preferences. Select the answer that best describes you.
             </h3>
           </div>
         )}
